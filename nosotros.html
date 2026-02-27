@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo Garcia Store - Nosotros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">ANGELO GARCIA STORE</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="nosotros.html" class="activo">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Carrito -->
+    <div class="carrito-icono" onclick="toggleCarrito()">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="contador">0</span>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCarrito()"></div>
+
+    <div class="carrito-panel" id="carritoPanel">
+        <h3>Bolsa de Compras</h3>
+        <div id="carritoVacio" class="carrito-vacio">
+            <div class="carrito-vacio-icon"><i class="fas fa-box"></i></div>
+            <p>Tu bolsa está vacía</p>
+        </div>
+        <ul id="listaCarrito"></ul>
+        <div class="carrito-resumen">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span>S/ <span id="total">0.00</span></span>
+            </div>
+            <div class="carrito-botones">
+                <button class="btn-comprar" onclick="abrirModalCompra()">Proceder a Compra</button>
+                <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Bolsa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Compra -->
+    <div class="modal" id="modalCompra">
+        <div class="modal-contenido">
+            <span class="modal-close" onclick="cerrarModalCompra()">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <div class="modal-resumen" id="resumenCompra"></div>
+            <form id="formCompra" onsubmit="procesarCompra(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección de Entrega *</label>
+                    <textarea id="direccion" name="direccion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notas">Notas Adicionales</label>
+                    <textarea id="notas" name="notas" placeholder="Especificaciones, tamaños, colores, etc..."></textarea>
+                </div>
+                <button type="submit" style="width:100%;background:#000;color:white;border-color:#000;padding:15px;">
+                    Completar Compra
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Encabezado de página -->
+    <div class="page-header">
+        <h1>NOSOTROS</h1>
+        <p>Conoce nuestra historia y valores</p>
+    </div>
+
+    <!-- Contenido -->
+    <div class="info-page">
+        <h2>Nuestra Historia</h2>
+        <p>En Angelo Garcia Store creemos que la moda minimalista es la expresión máxima del estilo personal. Nacimos con la misión de ofrecer prendas cuidadosamente seleccionadas, confeccionadas con materiales de calidad superior y diseños atemporales que trascienden las tendencias.</p>
+        <p>Cada pieza en nuestra colección refleja nuestro compromiso con la elegancia, la sostenibilidad y la satisfacción del cliente. Trabajamos directamente con proveedores que comparten nuestros valores de calidad y responsabilidad.</p>
+        <p>Desde Lima, llevamos el estilo minimalista a cada rincón del Perú, con envíos a todo el país y atención personalizada para cada cliente.</p>
+
+        <h2 style="margin-top: 50px;">Nuestros Valores</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icono"><i class="fas fa-check-circle"></i></div>
+                <h3>CALIDAD</h3>
+                <p>Seleccionamos únicamente materiales premium que garantizan durabilidad y confort.</p>
+            </div>
+            <div class="info-card">
+                <div class="icono"><i class="fas fa-minimize-2"></i></div>
+                <h3>MINIMALISMO</h3>
+                <p>Diseños limpios y atemporales que se adaptan a cualquier ocasión.</p>
+            </div>
+            <div class="info-card">
+                <div class="icono"><i class="fas fa-leaf"></i></div>
+                <h3>SOSTENIBILIDAD</h3>
+                <p>Comprometidos con procesos de producción responsables con el medio ambiente.</p>
+            </div>
+            <div class="info-card">
+                <div class="icono"><i class="fas fa-headset"></i></div>
+                <h3>SERVICIO</h3>
+                <p>Atención personalizada para que tu experiencia de compra sea perfecta.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 ANGELO GARCIA STORE - Todos los derechos reservados | Diseño Minimalista Premium
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/51922277161?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="whatsapp" title="Contáctanos por WhatsApp"><i class="fas fa-comment"></i></a>
+
+    <script src="carrito.js"></script>
+</body>
+</html>

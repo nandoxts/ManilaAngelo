@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelo Garcia Store - Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">ANGELO GARCIA STORE</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html" class="activo">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Carrito -->
+    <div class="carrito-icono" onclick="toggleCarrito()">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="contador">0</span>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="toggleCarrito()"></div>
+
+    <div class="carrito-panel" id="carritoPanel">
+        <h3>Bolsa de Compras</h3>
+        <div id="carritoVacio" class="carrito-vacio">
+            <div class="carrito-vacio-icon"><i class="fas fa-box"></i></div>
+            <p>Tu bolsa está vacía</p>
+        </div>
+        <ul id="listaCarrito"></ul>
+        <div class="carrito-resumen">
+            <div class="carrito-total">
+                <span>Total:</span>
+                <span>S/ <span id="total">0.00</span></span>
+            </div>
+            <div class="carrito-botones">
+                <button class="btn-comprar" onclick="abrirModalCompra()">Proceder a Compra</button>
+                <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar Bolsa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Compra -->
+    <div class="modal" id="modalCompra">
+        <div class="modal-contenido">
+            <span class="modal-close" onclick="cerrarModalCompra()">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <div class="modal-resumen" id="resumenCompra"></div>
+            <form id="formCompra" onsubmit="procesarCompra(event)">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección de Entrega *</label>
+                    <textarea id="direccion" name="direccion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notas">Notas Adicionales</label>
+                    <textarea id="notas" name="notas" placeholder="Especificaciones, tamaños, colores, etc..."></textarea>
+                </div>
+                <button type="submit" style="width:100%;background:#000;color:white;border-color:#000;padding:15px;">
+                    Completar Compra
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Encabezado de página -->
+    <div class="page-header">
+        <h1>CONTACTO</h1>
+        <p>Estamos aquí para ayudarte</p>
+    </div>
+
+    <!-- Contenido -->
+    <div class="info-page">
+        <h2>Información de Contacto</h2>
+
+        <div class="dato">
+            <div class="dato-icono"><i class="fas fa-phone"></i></div>
+            <div>
+                <strong>TELÉFONO / WHATSAPP</strong>
+                +51 922 277 161
+            </div>
+        </div>
+
+        <div class="dato">
+            <div class="dato-icono"><i class="fas fa-envelope"></i></div>
+            <div>
+                <strong>CORREO ELECTRÓNICO</strong>
+                aeninasqueg@gmail.com
+            </div>
+        </div>
+
+        <div class="dato">
+            <div class="dato-icono"><i class="fas fa-clock"></i></div>
+            <div>
+                <strong>HORARIO DE ATENCIÓN</strong>
+                Lunes a Domingo — 9:00 AM a 8:00 PM
+            </div>
+        </div>
+
+        <div class="dato">
+            <div class="dato-icono"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+                <strong>UBICACIÓN</strong>
+                Lima, Perú
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <p style="margin-bottom: 25px; font-size: 14px; color: #777; letter-spacing: 1px;">
+                ¿TIENES ALGUNA PREGUNTA? ESCRÍBENOS DIRECTAMENTE
+            </p>
+            <a href="https://wa.me/51922277161?text=Hola%2C%20me%20interesa%20hacer%20una%20consulta" 
+               target="_blank"
+               style="display:inline-block;padding:16px 50px;background:#25D366;color:white;text-decoration:none;font-size:14px;letter-spacing:2px;transition:all 0.3s ease;"
+               onmouseover="this.style.opacity='0.85'"
+               onmouseout="this.style.opacity='1'">
+                <i class="fas fa-comment"></i> ESCRIBIR POR WHATSAPP
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 ANGELO GARCIA STORE - Todos los derechos reservados | Diseño Minimalista Premium
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/51922277161?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="whatsapp" title="Contáctanos por WhatsApp"><i class="fas fa-comment"></i></a>
+
+    <script src="carrito.js"></script>
+</body>
+</html>
